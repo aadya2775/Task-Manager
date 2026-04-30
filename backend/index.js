@@ -48,15 +48,7 @@ app.use("/api/reports", reportRoutes);
 // Static uploads
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-// Serve frontend build
-app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-
-app.use((req, res) => {
-  res.sendFile(
-    path.resolve(__dirname, "../frontend", "dist", "index.html")
-  );
-});
 
 // Error handler
 app.use((err, req, res, next) => {
